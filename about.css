@@ -3,7 +3,13 @@
     color: #342821;
     padding: 50px 30px;
     text-align: center;
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: "DM Sans", sans-serif;
+}
+
+#about h1,
+#about h2,
+#about h3 {
+    font-family: "Playfair Display", Georgia, serif;
 }
 
 #about h1 {
