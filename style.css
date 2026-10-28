@@ -215,7 +215,7 @@ a {
 h1 {
     margin: 0;
     font-family: 'Auromiya', "Apple Garamond";
-    font-size: clamp(40px, 7vw, 60px);
+    font-size: clamp(38px, 5vw, 60px);
     font-weight: 500;
     line-height: 0.99;
 }
@@ -223,7 +223,8 @@ h1 {
 h1 span,
 h1 em {
     display: block;
-    white-space: nowrap;
+    white-space: normal;
+    text-wrap: balance;
 }
 
 h1 em {
@@ -240,6 +241,7 @@ h1 em {
 }
 
 .primary-link {
+    margin-top: 20px;
     min-height: 48px;
     padding: 0 19px;
     display: inline-flex;
@@ -420,6 +422,28 @@ footer span {
     }
 }
 
+@media (max-width: 900px) {
+    .hero {
+        min-height: 0;
+        padding: 56px 0;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-copy {
+        text-align: center;
+    }
+
+    .eyebrow {
+        justify-content: center;
+    }
+
+    .hero-art {
+        width: min(80%, 520px);
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 760px) {
     .site-header,
     .hero,
@@ -430,52 +454,83 @@ footer span {
     .site-header {
         width: 100%;
         padding: 12px 20px;
-        min-height: 76px;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .site-nav {
-        width: 100%;
-        justify-content: space-between;
+        min-height: 72px;
+        align-items: center;
+        flex-direction: row;
         gap: 12px;
     }
 
+    .brand {
+        gap: 5px;
+        font-size: 15px;
+    }
+
+    .brand-mark {
+        width: 28px;
+        flex-basis: 28px;
+        font-size: 24px;
+    }
+
+    .site-nav {
+        flex: 0 0 auto;
+        gap: clamp(14px, 4vw, 24px);
+    }
+
     .nav-link {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     h1 {
-        font-size: clamp(30px, 8vw, 52px);
+        font-size: clamp(32px, 8vw, 52px);
     }
 
     .hero {
-        min-height: 0;
-        padding: 30px 0 38px;
-        grid-template-columns: 1fr;
+        padding: 42px 0 30px;
+        gap: 24px;
+    }
+
+    .floating-bread {
+        font-size: 25px;
+    }
+
+    .bread-one {
+        top: 28%;
+        left: 3%;
+    }
+
+    .bread-two {
+        top: 43%;
+        left: auto;
+        right: 1%;
+    }
+
+    .bread-three {
+        top: 74%;
+        right: auto;
+        left: 2%;
+    }
+
+    .bread-four {
+        top: 86%;
+        left: auto;
+        right: 5%;
+    }
+
+    .bread-five,
+    .bread-six,
+    .bread-seven,
+    .bread-eight,
+    .bread-nine,
+    .bread-ten,
+    .bread-eleven,
+    .bread-twelve {
+        display: none;
     }
 
     .hero-art {
-        width: min(100% - 40px, 560px);
-        height: clamp(260px, 38vh, 330px);
-        margin: 30px auto 54px;
-    }
-
-    .shape-one {
-        width: 160px;
-        height: 160px;
-    }
-
-    .shape-two {
-        width: 130px;
-        height: 130px;
-    }
-
-    .shape-three {
-        width: 80px;
-        height: 80px;
+        width: min(100%, 440px);
+        height: auto;
+        margin: 0 auto 28px;
     }
 
     .link-sections {
@@ -493,6 +548,39 @@ footer span {
     footer {
         padding: 0 20px;
         gap: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    .site-header {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .brand {
+        font-size: 13px;
+    }
+
+    .brand-mark {
+        width: 24px;
+        flex-basis: 24px;
+        font-size: 21px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+    }
+
+    .hero {
+        width: calc(100% - 32px);
+    }
+
+    h1 {
+        font-size: clamp(29px, 8.5vw, 36px);
+    }
+
+    .hero-art {
+        width: 94%;
     }
 }
 
@@ -647,5 +735,26 @@ footer span {
         flex-direction: column;
         justify-content: center;
         padding: 14px 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-art {
+        width: min(80%, 520px);
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 760px) {
+    .hero-art {
+        width: min(100%, 440px);
+        height: auto;
+        margin: 0 auto 28px;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero-art {
+        width: 94%;
     }
 }
