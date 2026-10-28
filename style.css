@@ -1,0 +1,651 @@
+:root {
+    color-scheme: light;
+    --ink: #342821;
+    --muted: #786b61;
+    --green: #52684b;
+    --orange: #bd4e32;
+    --yellow: #edc459;
+    --line: #402C08;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 1. Daftarkan file font lokal agar bisa dibaca browser */
+@font-face {
+    font-family: 'Auromiya';
+    src: url('Auromiya.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: var(--ink);
+    font-family: DelRose-Regular;
+    font-weight: 400;
+}
+
+
+/* Background dua warna untuk area atas halaman. */
+.top-section {
+    min-height: 50vh;
+    background: #fff4e6;
+    background: linear-gradient(90deg, rgba(255, 244, 230, 1) 40%, rgba(255, 195, 0, 1) 100%);
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Bar navigasi & garis bawah. */
+.site-header {
+    width: 100%;
+    min-height: 88px;
+    margin: 0;
+    padding: 0 max(32px, calc((100% - 1160px) / 2));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff4e8;
+    border-bottom: 1px solid var(--line);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    font-family: 'Auromiya', "Apple Garamond";
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.brand-mark {
+    width: 34px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    flex: 0 0 34px;
+    font-size: 28px;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.nav-link {
+    padding: 9px 0;
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 400;
+    gap: 10px;
+    transition: color 160ms ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--ink);
+}
+
+.nav-link.active {
+    box-shadow: inset 0 -2px var(--green);
+}
+
+.nav-link-disabled {
+    opacity: 0.5;
+}
+
+/* Layout desktop: teks di kiri dan frame foto di kanan. */
+.hero {
+    position: relative;
+    width: min(1160px, calc(100% - 64px));
+    min-height: 70vh;
+    margin: 0 auto;
+    padding: 48px 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+    align-items: center;
+    gap: 48px;
+}
+
+.floating-breads {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.floating-bread {
+    position: absolute;
+    display: block;
+    opacity: 0;
+    font-size: clamp(24px, 3vw, 38px);
+    animation: bread-float 5s ease-in-out infinite;
+    filter: grayscale(1) sepia(1) saturate(1.4) hue-rotate(345deg);
+}
+
+.bread-one {
+    top: 10%;
+    left: 52%;
+}
+
+.bread-two {
+    top: 68%;
+    left: 7%;
+}
+
+.bread-three {
+    top: 18%;
+    right: 8%;
+}
+
+.bread-four {
+    top: 48%;
+    left: 51%;
+}
+
+.bread-five {
+    top: 76%;
+    left: 35%;
+}
+
+.bread-six {
+    top: 38%;
+    right: 10%;
+}
+
+.bread-seven {
+    top: 82%;
+    right: 26%;
+}
+
+.bread-eight {
+    top: 12%;
+    left: 22%;
+}
+
+.bread-nine {
+    top: 32%;
+    left: 17%;
+}
+
+.bread-ten {
+    top: 57%;
+    left: 25%;
+}
+
+.bread-eleven {
+    top: 74%;
+    right: 12%;
+}
+
+.bread-twelve {
+    top: 28%;
+    right: 30%;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 1;
+    padding: 10px 0;
+    animation: arrive 650ms ease both;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 12px;
+    color: var(--brown);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+    /* Font khusus untuk tagline utama. */
+h1 {
+    margin: 0;
+    font-family: 'Auromiya', "Apple Garamond";
+    font-size: clamp(40px, 7vw, 60px);
+    font-weight: 500;
+    line-height: 0.99;
+}
+
+h1 span,
+h1 em {
+    display: block;
+    white-space: nowrap;
+}
+
+h1 em {
+    color: var(--brown);
+    font-weight: 500;
+}
+
+.hero-description {
+    max-width: 390px;
+    margin: 24px 0 30px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.primary-link {
+    min-height: 48px;
+    padding: 0 19px;
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    border-radius: 3px;
+    background: var(--ink);
+    color: white;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: inherit;
+    transition: background 160ms ease, transform 160ms ease;
+    border: 0;
+    cursor: pointer;
+}
+
+.primary-link:hover {
+    transform: translateY(-2px);
+    background: var(--green);
+}
+
+.primary-link:disabled,
+.primary-link:disabled:hover {
+    opacity: 0.65;
+    transform: none;
+    background: var(--ink);
+    cursor: not-allowed;
+}
+
+.primary-link span {
+    color: var(--yellow);
+    font-size: 19px;
+}
+
+.art-topline {
+    position: absolute;
+    z-index: 2;
+    top: 18px;
+    right: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-shadow: 0 1px 8px rgb(0 0 0 / 45%);
+}
+
+.art-shape {
+    position: absolute;
+}
+
+.shape-one {
+    width: 190px;
+    height: 190px;
+    top: 77px;
+    left: 17%;
+    border-radius: 50%;
+    background: var(--orange);
+}
+
+.shape-two {
+    width: 155px;
+    height: 155px;
+    top: 143px;
+    right: 14%;
+    border-radius: 50%;
+    background: var(--yellow);
+    mix-blend-mode: multiply;
+}
+
+.shape-three {
+    width: 100px;
+    height: 100px;
+    top: 95px;
+    right: 22%;
+    transform: rotate(45deg);
+    background: var(--green);
+    mix-blend-mode: multiply;
+}
+
+.art-caption {
+    position: absolute;
+    right: 20px;
+    bottom: 13px;
+    margin: 0;
+    color: white;
+    font-size: 18px;
+    line-height: 1.2;
+    text-align: right;
+    text-shadow: 0 1px 8px rgb(0 0 0 / 45%);
+}
+
+.link-sections {
+    width: min(1160px, calc(100% - 64px));
+    margin: 0 auto;
+    padding: 28px 0 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+}
+
+.link-sections article {
+    padding: 10px 30px 10px 0;
+}
+
+.link-sections article + article {
+    padding-left: 30px;
+    border-left: 1px solid var(--line);
+}
+
+.section-number {
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.link-sections h2 {
+    margin: 12px 0 7px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.link-sections p {
+    max-width: 260px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+footer {
+    min-height: 58px;
+    padding: 0 max(32px, calc((100% - 1160px) / 2));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 11px;
+}
+
+footer span {
+    color: var(--green);
+}
+
+@keyframes arrive {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bread-float {
+    0% {
+        opacity: 0;
+        transform: translate(-8px, 12px) rotate(-12deg) scale(0.7);
+    }
+    15% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    50% {
+        transform: translate(10px, -14px) rotate(7deg) scale(1.04);
+    }
+    85% {
+        opacity: 1;
+        transform: translate(-6px, -2px) rotate(-6deg) scale(0.98);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(6px, -12px) rotate(8deg) scale(0.9);
+    }
+}
+
+@media (max-width: 760px) {
+    .site-header,
+    .hero,
+    .link-sections {
+        width: min(100% - 40px, 560px);
+    }
+
+    .site-header {
+        width: 100%;
+        padding: 12px 20px;
+        min-height: 76px;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .site-nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: clamp(30px, 8vw, 52px);
+    }
+
+    .hero {
+        min-height: 0;
+        padding: 30px 0 38px;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-art {
+        width: min(100% - 40px, 560px);
+        height: clamp(260px, 38vh, 330px);
+        margin: 30px auto 54px;
+    }
+
+    .shape-one {
+        width: 160px;
+        height: 160px;
+    }
+
+    .shape-two {
+        width: 130px;
+        height: 130px;
+    }
+
+    .shape-three {
+        width: 80px;
+        height: 80px;
+    }
+
+    .link-sections {
+        grid-template-columns: 1fr;
+        padding: 10px 0 28px;
+    }
+
+    .link-sections article,
+    .link-sections article + article {
+        padding: 18px 0;
+        border-left: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    footer {
+        padding: 0 20px;
+        gap: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.brand-dot {
+    color: var(--brown);
+}
+
+/* Pengaturan frame dan rasio foto roti. */
+.hero-art {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    max-height: 680px;
+    margin: 0;
+    overflow: hidden;
+    rotate: 2.5deg;
+    box-shadow: 0 6px 12px var(--line);
+}
+
+/* Foto tampil utuh di dalam frame tanpa dipotong. */
+.hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.art-topline,
+.art-caption {
+    z-index: 1;
+}
+
+.menu-heading {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 8px 0 12px;
+}
+
+.menu-heading .eyebrow {
+    margin-bottom: 12px;
+}
+
+.menu-heading h2 {
+    margin: 0;
+    font-size: 38px;
+}
+
+.menu-heading > p {
+    max-width: 270px;
+    margin: 0 0 4px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.link-sections article,
+.link-sections article + article {
+    padding: 0 0 12px;
+    border-left: 0;
+}
+
+.menu-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: block;
+    margin-bottom: 18px;
+    object-fit: cover;
+}
+
+.link-sections article h3 {
+    margin: 10px 0 7px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.story-band {
+    background: var(--green);
+    color: white;
+}
+
+.story-inner {
+    width: min(1160px, calc(100% - 64px));
+    margin: 0 auto;
+    padding: 68px 0 74px;
+}
+
+.story-inner .eyebrow {
+    color: var(--yellow);
+}
+
+.story-inner h2 {
+    margin: 0;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.08;
+}
+
+.story-inner > p:last-child {
+    max-width: 440px;
+    margin: 18px 0 0;
+    color: rgb(255 255 255 / 82%);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Susunan ulang halaman untuk layar ponsel. */
+@media (max-width: 760px) {
+    .link-sections {
+        grid-template-columns: 1fr;
+        row-gap: 28px;
+    }
+
+    .menu-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .menu-heading h2 {
+        font-size: 32px;
+    }
+
+    .menu-photo {
+        aspect-ratio: 16 / 10;
+    }
+
+    .story-inner {
+        width: min(100% - 40px, 560px);
+        padding: 52px 0 58px;
+    }
+
+    .story-inner h2 {
+        font-size: 36px;
+    }
+
+    footer {
+        min-height: 68px;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+}
