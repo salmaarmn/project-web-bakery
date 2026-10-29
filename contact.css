@@ -1,1 +1,377 @@
+/* ===== CONTACT & FOOTER ===== */
 
+/* Pita teks berjalan */
+.marquee {
+	overflow: hidden;
+	background: var(--yellow);
+	border-top: 1px solid var(--line);
+	border-bottom: 1px solid var(--line);
+}
+
+.marquee-track {
+	display: flex;
+	width: max-content;
+	animation: marquee 28s linear infinite;
+}
+
+.marquee-track span {
+	padding: 14px 28px;
+	white-space: nowrap;
+	font-family: 'Auromiya', "Apple Garamond";
+	font-size: 20px;
+	color: var(--ink);
+}
+
+@keyframes marquee {
+	to { transform: translateX(-50%); }
+}
+
+/* Section contact */
+.contact {
+	position: relative;
+	overflow: hidden;
+	background: linear-gradient(90deg, #fff4e6 40%, #ffe9a8 100%);
+}
+
+.contact-deco {
+	position: absolute;
+	border-radius: 50%;
+	pointer-events: none;
+}
+
+.deco-one {
+	width: 280px;
+	height: 280px;
+	top: -100px;
+	right: -70px;
+	background: var(--orange);
+	opacity: 0.18;
+}
+
+.deco-two {
+	width: 170px;
+	height: 170px;
+	bottom: -70px;
+	left: 4%;
+	background: var(--green);
+	opacity: 0.18;
+}
+
+.contact-inner {
+	position: relative;
+	width: min(1160px, calc(100% - 64px));
+	margin: 0 auto;
+	padding: 88px 0;
+	display: grid;
+	grid-template-columns: 1fr 0.9fr;
+	gap: 64px;
+	align-items: center;
+}
+
+.contact-info .eyebrow {
+	color: var(--orange);
+}
+
+.contact-info h2 {
+	margin: 0;
+	font-family: 'Auromiya', "Apple Garamond";
+	font-size: clamp(34px, 4.5vw, 52px);
+	font-weight: 500;
+	line-height: 1.05;
+}
+
+.contact-info h2 em {
+	display: block;
+	color: var(--orange);
+	font-style: normal;
+}
+
+.contact-desc {
+	max-width: 420px;
+	margin: 18px 0 30px;
+	color: var(--muted);
+	font-size: 16px;
+	line-height: 1.7;
+}
+
+/* Daftar info */
+.info-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 14px;
+}
+
+.info-list li {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 14px 18px;
+	background: #fff;
+	border: 1.5px solid var(--line);
+	border-radius: 14px;
+	box-shadow: 4px 4px 0 var(--line);
+	transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.info-list li:hover {
+	transform: translate(-3px, -3px);
+	box-shadow: 7px 7px 0 var(--line);
+}
+
+.info-icon {
+	flex: 0 0 46px;
+	height: 46px;
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+	border: 1.5px solid var(--line);
+	font-size: 21px;
+}
+
+.bg-orange { background: #f4b9a8; }
+.bg-yellow { background: var(--yellow); }
+.bg-green  { background: #bcd0b4; }
+
+.info-list strong {
+	display: block;
+	font-family: 'Auromiya', "Apple Garamond";
+	font-size: 19px;
+	font-weight: 500;
+}
+
+.info-list p {
+	margin: 2px 0 0;
+	color: var(--muted);
+	font-size: 14px;
+	word-break: break-word;
+}
+
+.info-list a:hover {
+	color: var(--orange);
+}
+
+/* Kartu form */
+.order-card {
+	position: relative;
+	padding: 36px 30px 30px;
+	display: flex;
+	flex-direction: column;
+	background: var(--ink);
+	color: #fff;
+	border-radius: 18px;
+	box-shadow: 8px 8px 0 var(--orange);
+	rotate: 1.5deg;
+}
+
+.order-card h3 {
+	margin: 0 0 14px;
+	font-family: 'Auromiya', "Apple Garamond";
+	font-size: 26px;
+	font-weight: 500;
+}
+
+.sticker {
+	position: absolute;
+	top: -16px;
+	right: 20px;
+	padding: 6px 14px;
+	background: var(--yellow);
+	color: var(--ink);
+	border: 1.5px solid var(--ink);
+	border-radius: 999px;
+	font-size: 13px;
+	rotate: 5deg;
+}
+
+.order-card label {
+	margin: 12px 0 6px;
+	font-size: 13px;
+	color: var(--yellow);
+}
+
+.order-card input,
+.order-card select,
+.order-card textarea {
+	width: 100%;
+	padding: 12px 14px;
+	font-family: inherit;
+	font-size: 15px;
+	color: #fff;
+	background: rgb(255 255 255 / 8%);
+	border: 1px solid rgb(255 255 255 / 25%);
+	border-radius: 8px;
+	outline: none;
+	transition: border-color 160ms ease, background 160ms ease;
+}
+
+.order-card select option {
+	color: var(--ink);
+}
+
+.order-card ::placeholder {
+	color: rgb(255 255 255 / 45%);
+}
+
+.order-card input:focus,
+.order-card select:focus,
+.order-card textarea:focus {
+	border-color: var(--yellow);
+	background: rgb(255 255 255 / 14%);
+}
+
+.order-card textarea {
+	resize: vertical;
+}
+
+.order-card .primary-link {
+	margin-top: 22px;
+	justify-content: space-between;
+	background: var(--orange);
+}
+
+.order-card .primary-link:hover {
+	background: var(--green);
+}
+
+/* Efek muncul saat scroll */
+.reveal {
+	opacity: 0;
+	translate: 0 24px;
+	transition: opacity 600ms ease, translate 600ms ease;
+}
+
+.reveal.show {
+	opacity: 1;
+	translate: 0 0;
+}
+
+/* Footer */
+.site-footer {
+	position: relative;
+	display: block;
+	min-height: 0;
+	margin-top: 14px;
+	padding: 0;
+	background: var(--ink);
+	border-top: 0;
+	color: rgb(255 255 255 / 75%);
+	font-size: 14px;
+}
+
+/* Tepi bergelombang di atas footer */
+.site-footer::before {
+	content: "";
+	position: absolute;
+	top: -14px;
+	left: 0;
+	width: 100%;
+	height: 14px;
+	background: radial-gradient(circle at 14px 14px, var(--ink) 14px, transparent 15px) repeat-x;
+	background-size: 28px 14px;
+}
+
+.footer-inner {
+	width: min(1160px, calc(100% - 64px));
+	margin: 0 auto;
+	padding: 56px 0 40px;
+	display: grid;
+	grid-template-columns: 1.6fr 1fr 1fr;
+	gap: 40px;
+}
+
+.footer-col {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.footer-col h4 {
+	margin: 0 0 6px;
+	color: var(--yellow);
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.footer-col p {
+	max-width: 320px;
+	margin: 0;
+	line-height: 1.7;
+}
+
+.footer-col a:hover {
+	color: var(--yellow);
+}
+
+.footer-brand {
+	font-family: 'Auromiya', "Apple Garamond";
+	font-size: 24px;
+	color: #fff;
+}
+
+.footer-brand span {
+	color: var(--yellow);
+}
+
+.social {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.social a {
+	padding: 8px 16px;
+	border: 1px solid rgb(255 255 255 / 30%);
+	border-radius: 999px;
+	transition: background 160ms ease, color 160ms ease;
+}
+
+.social a:hover {
+	background: var(--yellow);
+	color: var(--ink);
+}
+
+.footer-bottom {
+	width: min(1160px, calc(100% - 64px));
+	margin: 0 auto;
+	padding: 18px 0;
+	border-top: 1px solid rgb(255 255 255 / 15%);
+	font-size: 12px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+	.contact-inner {
+		grid-template-columns: 1fr;
+		gap: 48px;
+	}
+}
+
+/* HP */
+@media (max-width: 760px) {
+	.contact-inner {
+		width: calc(100% - 40px);
+		padding: 56px 0;
+	}
+
+	.order-card {
+		rotate: 0deg;
+	}
+
+	.footer-inner,
+	.footer-bottom {
+		width: calc(100% - 40px);
+	}
+
+	.footer-inner {
+		grid-template-columns: 1fr 1fr;
+		padding: 40px 0 28px;
+	}
+
+	.footer-about {
+		grid-column: 1 / -1;
+	}
+  }
